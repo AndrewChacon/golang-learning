@@ -5,6 +5,9 @@ import (
 )
  
 func main () {
+
+	// Variables and Conditionals
+
 	// var smsSendingLimit int
 	// var costPerSMS float64
 	// var hasPermission bool
@@ -46,7 +49,76 @@ func main () {
 	} else {
 		fmt.Println("Message not sent")
 	}
+
+	// Functions
+
+	// func sub(x int, y int) int {
+	// 	return x - y
+	// }
+
+	
+	// fmt.Println(concat("Hello", "World"))
+
+	// fmt.Println(add(1,2))
+
+	sendsSoFar := 430
+	const sendsToAdd = 25
+	sendsSoFar = incrementSends(sendsSoFar, sendsToAdd)
+	fmt.Println("You've sent", sendsSoFar, "messages")
+
+	firstName, _, _ := getNames()
+	fmt.Println("Welcome to Textio", firstName)
+
+	
+
 }
+
+// func divide(dividen, divisor int) (int, error) {
+// 	if divisor == 0 {
+// 		return 0, errors.New("Cant divide by 0") // returns early with an error
+// 	}
+// 	return dividen/divisor, nil // nil error means no error 
+// }
+
+// func getCoords()(x, y int) {
+// 	return // naked return, automatically returns x and y
+// }
+
+// func yearsUntilEvents(age int)(yearsUntilAdult, yearsUntilDrinking, yearsUntilCarRental int) {
+// 	yearsUntilAdult = 18 - age
+// 	if yearsUntilAdult < 0 {
+// 		yearsUntilAdult = 0
+// 	}
+
+// 	yearsUntilDrinking = 21 - age
+// 	if yearsUntilDrinking < 0 {
+// 		yearsUntilDrinking = 0
+// 	}
+
+// 	yearsUntilCarRental = 25 - age
+// 	if yearsUntilCarRental < 0 {
+// 		yearsUntilCarRental = 0
+// 	}
+
+// 	return yearsUntilAdult, yearsUntilDrinking, yearsUntilCarRental
+// }
+
+func getNames()(string, string, string) { // multiple return values
+	return "Andrew", "Bolivar", "Chacon"
+}
+
+func incrementSends(sendsSoFar, sendsToAdd int) int {
+	return sendsSoFar + sendsToAdd
+}
+
+// func concat(s1 string, s2 string) string {
+// 	return s1 + s2
+	
+// }
+
+// func add(x, y int) int {
+// 	return x + y
+// }
 
 // Data Types
 
