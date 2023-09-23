@@ -61,16 +61,90 @@ func main () {
 
 	// fmt.Println(add(1,2))
 
-	sendsSoFar := 430
-	const sendsToAdd = 25
-	sendsSoFar = incrementSends(sendsSoFar, sendsToAdd)
-	fmt.Println("You've sent", sendsSoFar, "messages")
+	// sendsSoFar := 430
+	// const sendsToAdd = 25
+	// sendsSoFar = incrementSends(sendsSoFar, sendsToAdd)
+	// fmt.Println("You've sent", sendsSoFar, "messages")
 
-	firstName, _, _ := getNames()
-	fmt.Println("Welcome to Textio", firstName)
+	// firstName, _, _ := getNames()
+	// fmt.Println("Welcome to Textio", firstName)
 
+	// STRUCTS
+
+	// type car struct {
+	// 	Make string
+	// 	Model string
+	// 	Height int
+	// 	width int
+	// }
+
+	// type messageToSend struct {
+	// 	phoneNumber int
+	// 	message string
+	// }
+
+	// type Wheel struct {
+	// 	Radius int
+	// 	Material string
+	// }
+
+	// type Car struct {
+	// 	Make string
+	// 	Model string
+	// 	Height int
+	// 	Width int
+	// 	Frontwheel Wheel
+	// 	Backwheel Wheel
+	// }
+
+	// myCar := Car{}
+	// myCar.Frontwheel.Radius = 5
+
+	// type Car struct { 
+	// 	Make string
+	// 	Model string
+	// 	Height int
+	// 	Width int
+	// 	Wheel struct {
+	// 		Radius int
+	// 		Material string
+	// 	}
+	// }
+
+	type car struct {
+		make string
+		model string
+	}
 	
+	type truck struct {
+		car
+		bedSize int
+	}
 
+	myTruck := truck{}
+	myTruck.make = "a"
+	
+}
+
+type User struct {
+	name string
+	number int
+}
+
+type messageToSend struct {
+	message string
+	sender User 
+	recipient User
+}
+
+func canSendMessage(mToSend messageToSend) bool {
+	if(mToSend.sender.name == "" && mToSend.sender.number == 0) {
+		return false
+	}
+	if(mToSend.recipient.name == "" && mToSend.recipient.number == 0) {
+		return false
+	}
+	return false
 }
 
 // func divide(dividen, divisor int) (int, error) {
@@ -103,13 +177,13 @@ func main () {
 // 	return yearsUntilAdult, yearsUntilDrinking, yearsUntilCarRental
 // }
 
-func getNames()(string, string, string) { // multiple return values
-	return "Andrew", "Bolivar", "Chacon"
-}
+// func getNames()(string, string, string) { // multiple return values
+// 	return "Andrew", "Bolivar", "Chacon"
+// }
 
-func incrementSends(sendsSoFar, sendsToAdd int) int {
-	return sendsSoFar + sendsToAdd
-}
+// func incrementSends(sendsSoFar, sendsToAdd int) int {
+// 	return sendsSoFar + sendsToAdd
+// }
 
 // func concat(s1 string, s2 string) string {
 // 	return s1 + s2
